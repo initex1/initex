@@ -18,7 +18,7 @@ public class ModifyTaskView {
 
         printTasks();
         System.out.println("");
-        System.out.println("Which task to modify");
+        System.out.println("Which task to modify?");
         String findTask = scanner.next();
         UserTask taskToModify = modifyTaskService.getTaskForModify(findTask);
         System.out.println("What do u want to modify: " + "\n" + "1-Task name" + "\n" + "2-Task status");
