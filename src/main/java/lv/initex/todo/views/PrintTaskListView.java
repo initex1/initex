@@ -12,6 +12,7 @@ public class PrintTaskListView {
     }
 
     public void execute() {
+
         System.out.println("Current user have following tasks:");
         for (UserTask task : printTaskListService.getAllTasks()) {
             System.out.println(task.getTask().getTaskName() + " Status: " + task.getTask().getStatus());

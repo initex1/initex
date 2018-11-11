@@ -15,7 +15,7 @@ public class SelectUserView {
 
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        List<User> userList=selectUserService.printAllusers();
+        List<User> userList=selectUserService.printAllUsers();
         for(User user:userList){
             System.out.println(user.getUserName());
         }

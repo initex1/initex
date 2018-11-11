@@ -23,7 +23,7 @@ public class SelectUserService {
         return null;
     }
 
-    public List<User> printAllusers() {
+    public List<User> printAllUsers() {
         return database.getAllUsers();
     }
 }

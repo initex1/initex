@@ -2,6 +2,7 @@ package lv.initex.todo;
 
 import lv.initex.todo.database.InMemoryDatabase;
 import lv.initex.todo.database.UserTaskRepository;
+import lv.initex.todo.database.jdbc.UserTaskRepositoryImpl;
 import lv.initex.todo.services.*;
 import lv.initex.todo.views.*;
 
@@ -17,7 +18,7 @@ public class MainToDo {
     private static void runMainMenu() {
         Scanner scanner = new Scanner(System.in);
 
-        UserTaskRepository database = new InMemoryDatabase();
+        UserTaskRepository database = new UserTaskRepositoryImpl();
 
         AddUserService addUserService = new AddUserService(database);
         SelectUserService selectUserService = new SelectUserService(database);

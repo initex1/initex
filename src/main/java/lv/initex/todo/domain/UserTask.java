@@ -1,15 +1,21 @@
 package lv.initex.todo.domain;
 
-import lv.initex.todo.domain.Task;
-import lv.initex.todo.domain.User;
-
 public class UserTask {
+    private Long id;
     private User user;
     private Task task;
 
     public UserTask(User user, Task task){
         this.user=user;
         this.task=task;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Task getTask() {

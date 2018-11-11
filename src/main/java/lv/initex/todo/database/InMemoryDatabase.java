@@ -48,12 +48,12 @@ public class InMemoryDatabase implements UserTaskRepository {
 
     @Override
     public void modifyTaskStatus(UserTask task, TaskStatusEnum status) {
-userTasksList.get(userTasksList.indexOf(task)).getTask().setStatus(status);
+        userTasksList.get(userTasksList.indexOf(task)).getTask().setStatus(status);
     }
 
     @Override
     public boolean deleteTask(UserTask userTask) {
-        return false;
+        return userTasksList.remove(userTask);
     }
 
     @Override
@@ -72,7 +72,7 @@ userTasksList.get(userTasksList.indexOf(task)).getTask().setStatus(status);
     public List<UserTask> getAllUserTasks(User user) {
         List<UserTask> userTasks = new ArrayList<>();
         for (UserTask task : userTasksList) {
-            if (task.getUser().equals( user)) {
+            if (task.getUser().equals(user)) {
                 userTasks.add(task);
             }
         }
