@@ -5,7 +5,9 @@ import lv.initex.todo.domain.Task;
 import lv.initex.todo.domain.TaskStatusEnum;
 import lv.initex.todo.domain.User;
 import lv.initex.todo.domain.UserTask;
+import org.springframework.stereotype.Component;
 
+@Component
 public class AddTaskService {
 
     private UserTaskRepository database;

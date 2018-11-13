@@ -1,9 +1,11 @@
 package lv.initex.todo.views;
 
 import lv.initex.todo.services.AddUserService;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Component
 public class AddUserView {
     private AddUserService addUserService;
 

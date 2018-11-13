@@ -1,10 +1,9 @@
 package lv.initex.todo;
 
-import lv.initex.todo.database.InMemoryDatabase;
-import lv.initex.todo.database.UserTaskRepository;
-import lv.initex.todo.database.jdbc.UserTaskRepositoryImpl;
-import lv.initex.todo.services.*;
+import lv.initex.todo.config.SpringAppConfig;
 import lv.initex.todo.views.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.Scanner;
 
@@ -18,21 +17,15 @@ public class MainToDo {
     private static void runMainMenu() {
         Scanner scanner = new Scanner(System.in);
 
-        UserTaskRepository database = new UserTaskRepositoryImpl();
+        ApplicationContext context
+                = new AnnotationConfigApplicationContext(SpringAppConfig.class);
 
-        AddUserService addUserService = new AddUserService(database);
-        SelectUserService selectUserService = new SelectUserService(database);
-        AddTaskService addTaskService = new AddTaskService(database);
-        ModifyTaskService modifyTaskService=new ModifyTaskService(database);
-        DeleteTaskService deleteTaskService = new DeleteTaskService(database);
-        PrintTaskListService printTaskListService = new PrintTaskListService(database);
-
-        AddUserView addUserView = new AddUserView(addUserService);
-        SelectUserView selectUserView = new SelectUserView(selectUserService);
-        AddTaskView addTaskView = new AddTaskView(addTaskService);
-        ModifyTaskView modifyTaskView=new ModifyTaskView(modifyTaskService);
-        DeleteTaskView deleteTaskView = new DeleteTaskView(deleteTaskService);
-        PrintTaskListView printTaskListView = new PrintTaskListView(printTaskListService);
+        AddUserView addUserView = context.getBean(AddUserView.class);
+        SelectUserView selectUserView = context.getBean(SelectUserView.class);
+        AddTaskView addTaskView = context.getBean(AddTaskView.class);
+        ModifyTaskView modifyTaskView=context.getBean(ModifyTaskView.class);
+        DeleteTaskView deleteTaskView = context.getBean(DeleteTaskView.class);
+        PrintTaskListView printTaskListView = context.getBean(PrintTaskListView.class);
 
         System.out.println("Hi! this is system for creating TO-Do list");
         int input = 0;

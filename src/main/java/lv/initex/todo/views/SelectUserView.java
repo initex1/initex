@@ -2,10 +2,12 @@ package lv.initex.todo.views;
 
 import lv.initex.todo.domain.User;
 import lv.initex.todo.services.SelectUserService;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Scanner;
 
+@Component
 public class SelectUserView {
     private SelectUserService selectUserService;
 

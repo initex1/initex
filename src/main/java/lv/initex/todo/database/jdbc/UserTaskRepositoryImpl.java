@@ -6,6 +6,7 @@ import lv.initex.todo.domain.Task;
 import lv.initex.todo.domain.TaskStatusEnum;
 import lv.initex.todo.domain.User;
 import lv.initex.todo.domain.UserTask;
+import org.springframework.stereotype.Component;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-
+@Component
 public class UserTaskRepositoryImpl extends JDBCRepository implements UserTaskRepository {
 
     private User activeUser = new User();

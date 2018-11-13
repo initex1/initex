@@ -2,10 +2,12 @@ package lv.initex.todo.services;
 
 import lv.initex.todo.database.UserTaskRepository;
 import lv.initex.todo.domain.User;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Optional;
 
+@Component
 public class SelectUserService {
     private UserTaskRepository database;
 

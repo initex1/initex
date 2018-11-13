@@ -2,9 +2,11 @@ package lv.initex.todo.views;
 
 import lv.initex.todo.domain.UserTask;
 import lv.initex.todo.services.ModifyTaskService;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Component
 public class ModifyTaskView {
     private ModifyTaskService modifyTaskService;
 

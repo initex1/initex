@@ -1,9 +1,11 @@
 package lv.initex.todo.views;
 
 import lv.initex.todo.services.DeleteTaskService;
+import org.springframework.stereotype.Component;
 
 import java.util.Scanner;
 
+@Component
 public class DeleteTaskView {
     private DeleteTaskService deleteTaskService;
 

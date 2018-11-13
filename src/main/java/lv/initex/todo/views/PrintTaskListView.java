@@ -2,7 +2,9 @@ package lv.initex.todo.views;
 
 import lv.initex.todo.domain.UserTask;
 import lv.initex.todo.services.PrintTaskListService;
+import org.springframework.stereotype.Component;
 
+@Component
 public class PrintTaskListView {
 
     private PrintTaskListService printTaskListService;
