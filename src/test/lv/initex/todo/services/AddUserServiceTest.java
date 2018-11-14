@@ -10,19 +10,28 @@ public class AddUserServiceTest {
     private UserTaskRepositoryMock repositoryMock = new UserTaskRepositoryMock();
 
     //@InjectMocks
-    private AddUserService service;
+    private AddUserService serviceAddUser;
+
 
     @Before
     public void init() {
         repositoryMock = new UserTaskRepositoryMock();
-        service = new AddUserService(repositoryMock);
+        serviceAddUser = new AddUserService(repositoryMock);
     }
 
     @Test
     public void addUser() {
         assertFalse(repositoryMock.isUserAdded());
-        service.add("userName");
+        serviceAddUser.add("userName");
         assertTrue(repositoryMock.isUserAdded());
+    }
+
+    @Test
+    public void setActiveUser() {
+        boolean setActiveUser = false;
+        serviceAddUser.add("userName");
+        setActiveUser = repositoryMock.getActiveUser().getUserName().equals("userName");
+        assertTrue(setActiveUser);
     }
 
 }
